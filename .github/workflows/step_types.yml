@@ -1,0 +1,15 @@
+name: steps type
+on: 
+  workflow_dispatch:
+jobs:
+  say_hello_inline_bash:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "hello world from bash"
+  say_hello_inline_python:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: print("hello world from python")
+
+  # say_hello_action:
+  #   runs-on: ubuntu-20.04  
