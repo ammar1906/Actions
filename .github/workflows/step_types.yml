@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - run: print("hello world from python")
-
+  job3:
+    runs-on: ubuntu-20.04
+    needs: 
+      - say_hello_inline_bash
+      - say_hello_inline_python
   # say_hello_action:
   #   runs-on: ubuntu-20.04  
