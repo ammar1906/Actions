@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - run: print("hello world from python")
+        shell: python
   job3:
     runs-on: ubuntu-20.04
     needs: 
