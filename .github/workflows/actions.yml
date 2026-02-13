@@ -1,0 +1,23 @@
+name: events
+on :
+  push:
+    branches:
+      - main
+
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+  workflow_dispatch:
+    
+
+jobs:
+  echo_event:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello world from actions"
+
+
