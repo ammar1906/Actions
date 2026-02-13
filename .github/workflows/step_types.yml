@@ -15,5 +15,7 @@ jobs:
     needs: 
       - say_hello_inline_bash
       - say_hello_inline_python
+    steps:
+      - run: echo "the third step waits for the first 2 "
   # say_hello_action:
   #   runs-on: ubuntu-20.04  
