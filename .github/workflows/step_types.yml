@@ -1,24 +1,25 @@
-name: steps type
+name: Steps Type
 on: 
-  workflow_dispatch:
+  workflow_dispatch: # This means it only runs when you click the button
 
 jobs:
   say_hello_inline_bash:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo "hello world from bash"
 
   say_hello_inline_python:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      # You must specify the shell to run Python code inline
-      - shell: python
-        run: print("hello world from python")
+      - name: Run Python
+        shell: python
+        run: |
+          print("hello world from python")
 
   job3:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     needs: 
       - say_hello_inline_bash
       - say_hello_inline_python
     steps:
-      - run: echo "the third step waits for the first 2"
+      - run: echo "the third job waited for the first 2"
